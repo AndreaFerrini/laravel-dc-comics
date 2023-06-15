@@ -7,8 +7,11 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
+                    <li class="nav-item p-3">
                     <a class="nav-link" href="{{ route( 'comics.index') }}">Comics</a>
+                    </li>
+                    <li class="nav-item p-3">
+                    <a class="nav-link" href="{{ route( 'comics.create') }}">Create</a>
                     </li>
                 </ul>
             </div>
