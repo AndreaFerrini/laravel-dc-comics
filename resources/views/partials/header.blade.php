@@ -13,6 +13,9 @@
                     <li class="nav-item p-3">
                     <a class="nav-link" href="{{ route( 'comics.create') }}">Create</a>
                     </li>
+                    <li class="nav-item p-3">
+                    <a class="nav-link" href="{{ route( 'comics.show') }}">Show</a>
+                    </li>
                 </ul>
             </div>
         </div>
