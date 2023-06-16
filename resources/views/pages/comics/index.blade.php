@@ -7,6 +7,12 @@
 @section("content")
     <h1>Tutti i fumetti</h1>
 
+    @if(Session::has("success"))
+        <div class="alert alert-success text-center">
+            {!! Session::get( "success" ) !!}
+        </div>
+    @endif
+
     @forelse ($comics as $elem)
     <a href="{{ route( 'comics.show', [ 'comic' => $elem->id ] ) }}">
         <h6>{{ $elem->title }}</h6>

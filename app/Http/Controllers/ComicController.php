@@ -38,13 +38,28 @@ class ComicController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate(
+            [
+                "title" => "required|max:40|unique:comics",
+                "series" => "required"
+            ],
+            [
+                "title.required" => "Il campo :attribute :input è richiesto",
+                "title.max" => "Il campo title non deve superare i 40 caratteri",
+                "title.unique" => "Il campo title non può avere il titolo di uno già esistente",
+                "series.required" => "Il campo :attribute :input è richiesto",
+            ]
+        );
+
+
         $form_data = $request->all();
 
         $newComic = new Comic();
-        $newComic->fill();
+        $newComic->fill($form_data);
+     
         $newComic->save();
 
-        return redirect()->route("comics.index");
+        return redirect()->route("comics.index")->with("success", "Congratulazioni hai creato un fumetto");
     }
 
     /**

@@ -7,12 +7,19 @@
 @section("content")
     <h1>Crea il Fumetto</h1>
 
+
+
+
     <form action=" {{ route( 'comics.store' ) }}" method="POST">
         @csrf
 
         <div class="form-group mt-3">
             <label class="form-label" for="">title</label>
-            <input class="form-control" type="text" name="title">
+            <input required maxlength="40" class="form-control @error('title') is-invalid @enderror" type="text" name="title">
+            <!-- sezione validate title-->
+            @error('title')
+                <div class="alert alert-danger">{{ $message }}</div>
+            @enderror
         </div>
         <div class="form-group mt-3">
             <label class="form-label" for="">description</label>
@@ -28,7 +35,11 @@
         </div>
         <div class="form-group mt-3">
             <label class="form-label" for="">series</label>
-            <input class="form-control" type="text" name="series">
+            <input class="form-control @error('series') is-invalid @enderror" type="text" name="series">
+            <!-- sezione validate series-->
+            @error('series')
+                <div class="alert alert-danger">{{ $message }}</div>
+            @enderror
         </div>
         <div class="form-group mt-3">
             <label class="form-label" for="">sale_date</label>
