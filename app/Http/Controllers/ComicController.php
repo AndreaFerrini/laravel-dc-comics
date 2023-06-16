@@ -68,7 +68,7 @@ class ComicController extends Controller
      */
     public function edit(Comic $comic)
     {
-        //
+        return view( 'pages.comics.edit', compact( 'comic' ) );
     }
 
     /**
