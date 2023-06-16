@@ -40,6 +40,6 @@
             <input class="form-control" type="text" name="type" value="{{ old('type') ?? $comic->type }}">
         </div>
 
-        <button type="submit" class="btn btn-warning mt-3">Conferma Modifiche Fumetto</button>
+        <button type="submit" class="btn btn-success mt-3">Conferma</button>
     </form>
 @endsection
