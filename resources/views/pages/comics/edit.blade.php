@@ -7,8 +7,9 @@
 @section("content")
     <h1>Modifica il Fumetto</h1>
 
-    <form action=" {{ route( 'comics.store' ) }}" method="POST">
+    <form action=" {{ route( 'comics.update', $comic ) }}" method="POST">
         @csrf
+        @method("PUT")
 
         <div class="form-group mt-3">
             <label class="form-label" for="">title</label>
